@@ -14,11 +14,17 @@ int main(void){
     
     testrm();
     #endif
+
+    #if defined TESTPS
+
+    testps();
+    #endif
     
     #if defined TEST
 
     testnw();
     testrm();
+    testps();
     #endif
 
     return 0;

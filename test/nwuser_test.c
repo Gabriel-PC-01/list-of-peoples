@@ -1,17 +1,16 @@
 #include "list.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 
-
-
-
-int testnw(){
+void testnw(void){
 
     PTR_users view;
 
     if(new_user("primeiro", 1) == 0){
         fprintf(stderr, "\nnó linkado\n");
+        fprintf(stderr, "estrutura de dados\n");
         view = START_ptr;
         while (view != NULL){
             fprintf(stderr, "%s || %d", view->name, view->age);
@@ -25,6 +24,7 @@ int testnw(){
     }
     if(new_user("segundo", 2) == 0){
         fprintf(stderr, "\nnó linkado\n");
+        fprintf(stderr, "estrutura de dados\n");
         view = START_ptr;
         while (view != NULL){
             fprintf(stderr, "%s || %d\n", view->name, view->age);
@@ -34,6 +34,7 @@ int testnw(){
     }
     if(new_user("terceiro", 3) == 0){
         fprintf(stderr, "\nnó linkado\n");
+        fprintf(stderr, "estrutura de dados\n");
         view = START_ptr;
         while (view != NULL){
             fprintf(stderr, "%s || %d\n", view->name, view->age);
@@ -61,6 +62,7 @@ int testnw(){
         }
         fprintf(stderr, "\n__________________________________________");
     }
+ 
     
-    return 0;
+    sleep(1);
 }

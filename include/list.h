@@ -20,10 +20,14 @@ int new_user(const char *name, const int year);
 
 int rm_user(const char *name, const int year);
 
-//PTR_users pass_user();
+int pass_user(PTR_users* list);
 
-int testrm();
 
-int testnw();
 
+
+void testrm(void);
+
+void testnw(void);
+
+void testps(void);
 

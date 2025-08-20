@@ -1,37 +1,33 @@
 #include "list.h"
+#include <stdlib.h>     
 #include <stdio.h>
 #include <string.h>
 
 
-PTR_users pass_user(){
+int pass_user(PTR_users* list){
 
-    int cont;
-    PTR_users reset = START_ptr;
+    int cont = 0;
+    PTR_users cont_node = START_ptr;
+    *list = NULL;
 
-    while (START_ptr != NULL){
 
-        START_ptr = START_ptr->next_node;
+    while(cont_node != NULL){
+
+       (*list) = realloc((*list), (cont + 1) * sizeof(users));
+
+        strcpy((*list)[cont].name,cont_node->name);
+        (*list)[cont].age = cont_node->age;
+
+        cont_node = cont_node->next_node;
         
         cont++;
     }
 
     if(cont == 0){
 
-        return NULL;
+        return -1;
     }
 
-    START_ptr  = reset;
-    users list[cont];
     
-    for (int i = 0; i < cont; i++){
-    
-        strcpy(list[i].name, START_ptr->name);
-        list[i].age = START_ptr->age;
-        
-        START_ptr = START_ptr->next_node;
-    }
-    
-
-    return &list;
-
+    return cont;
 }

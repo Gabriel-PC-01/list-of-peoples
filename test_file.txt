@@ -1,0 +1,51 @@
+
+nó linkado
+estrutura de dados
+primeiro || 1
+__________________________________________
+nó linkado
+estrutura de dados
+segundo || 2
+primeiro || 1
+
+__________________________________________
+nó linkado
+estrutura de dados
+terceiro || 3
+segundo || 2
+primeiro || 1
+
+__________________________________________
+nó linkado
+estrutura de dados
+quarto || 4
+terceiro || 3
+segundo || 2
+primeiro || 1
+
+__________________________________________
+nó linkado
+estrutura de dados
+quinto || 5
+quarto || 4
+terceiro || 3
+segundo || 2
+primeiro || 1
+
+__________________________________________
+exclusão 1 bem sucediada
+
+exclusão 2 bem sucediada
+
+exclusão 3 bem sucediada
+
+todos os usuários deletados com sucesso
+________________________________________________
+
+estrutura de dados passada com sucesso
+nome: terceiro||idade:3
+
+nome: segundo||idade:2
+
+nome: primeiro||idade:1
+

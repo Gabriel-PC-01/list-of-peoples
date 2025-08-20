@@ -10,7 +10,7 @@ static PTR_users BEFORE_user;
 
 static int find(const char name[], const int year);
 static int delete_one(const char name[], const int year);
-static int delete_all();
+static int delete_all(void);
 
 
 static int find(const char name[], const int year){

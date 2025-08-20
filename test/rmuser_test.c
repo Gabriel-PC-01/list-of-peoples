@@ -1,10 +1,9 @@
 #include "list.h"
 #include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
 
-
-int testrm(void){
+void testrm(void){
 
     
     new_user("primeiro", 1);
@@ -83,5 +82,5 @@ int testrm(void){
         break;
     }
 
-    return 0;
+    sleep(1);   
 }
