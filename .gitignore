@@ -1,0 +1,16 @@
+# Arquivos objeto
+*.o
+
+# Arquivos de bibliotecas estáticas
+*.a
+
+# Executáveis
+*.out *.exe
+list
+
+# Diretórios de build comuns
+/build/ /bin/ /obj/
+/.cache/
+#Arquivos de build
+test_file.txt
+makefile Makefile

@@ -4,30 +4,122 @@
 #include <string.h>
 
 
-int pass_user(PTR_users* list){
-
-    int cont = 0;
-    PTR_users cont_node = START_ptr;
-    *list = NULL;
+static void find_name(PTR_users *list, filter *type);
+static void find_all(PTR_users *list, filter *type);
+static void find_age(PTR_users *list, filter *type );
 
 
-    while(cont_node != NULL){
+int pass_user(PTR_users* list, filter *type){
 
-       (*list) = realloc((*list), (cont + 1) * sizeof(users));
+    if(type->age_low > type->age_high){
 
-        strcpy((*list)[cont].name,cont_node->name);
-        (*list)[cont].age = cont_node->age;
+        return -3;
 
-        cont_node = cont_node->next_node;
-        
-        cont++;
+        }
+
+    if (list != NULL){
+    
+        free(*list);
     }
 
-    if(cont == 0){
+    type->cont = 0;
+    *list = NULL;
 
+    if (strcmp(type->filter, "all") == 0) {
+        
+        find_all(list, type);
+        return 1; 
+    }
+
+
+    if (strcmp(type->filter, "filter_name") == 0){
+
+        find_name(list, type);
+        return 2;
+    }
+
+    if (strcmp(type->filter, "filter_age") == 0) {
+
+        find_age(list, type);
+        return 3;
+    }
+
+    if(type->cont == 0){
         return -1;
     }
 
+    if(strcmp(type->filter, "filter_name") && strcmp(type->filter, "all") && strcmp(type->filter, "filter_age")){
+
+        return -2;
+    }
+
+    return -2;
     
-    return cont;
 }
+
+
+static void find_name(PTR_users *list, filter *type){
+
+    PTR_users cont_node = START_ptr;
+
+    while(cont_node != 0){
+    
+        if (strcmp(cont_node->name,type->name) == 0){
+        
+            (*list) = realloc((*list),(type->cont + 1) * sizeof(users));
+            
+            (*list)[type->cont].age = cont_node->age;
+            strcpy((*list)[type->cont].name, cont_node->name);
+            
+            type->cont++;
+        };
+
+
+    cont_node = cont_node->next_node;
+    }
+
+}
+
+
+static void find_all(PTR_users *list, filter *type){
+
+    PTR_users cont_node = START_ptr;
+
+    while(cont_node != NULL){
+
+       (*list) = realloc((*list), ((type->cont) + 1) * sizeof(users));
+
+        strcpy((*list)[type->cont].name, cont_node->name);
+        (*list)[type->cont].age = cont_node->age;
+
+        cont_node = cont_node->next_node;
+        
+            type->cont++;
+        };
+
+    return ;
+}
+
+
+static void find_age(PTR_users *list, filter *type){
+
+    PTR_users cont_node = START_ptr;
+    
+
+    while(cont_node != NULL){
+    
+        if (cont_node->age >= type->age_low && cont_node->age <= type->age_high) {
+       
+            (*list) = realloc((*list), ((type->cont) + 1) * sizeof(users));
+
+            strcpy((*list)[type->cont].name, cont_node->name);
+            (*list)[type->cont].age = cont_node->age;
+            type->cont++;
+        }
+    
+        cont_node = cont_node->next_node;
+    }
+    
+    return ;
+}
+

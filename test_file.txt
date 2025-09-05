@@ -40,12 +40,57 @@ exclusão 2 bem sucediada
 exclusão 3 bem sucediada
 
 todos os usuários deletados com sucesso
-________________________________________________
+***********************************************************
+***********************************************************
 
-estrutura de dados passada com sucesso
-nome: terceiro||idade:3
+todos os usuários foram passados
 
-nome: segundo||idade:2
+Bruno | 59
+Bruno | 47
+Bruno | 21
+Alice | 42
+Alice | 55
+Alice | 30
+Zeca | 32
+Yara | 44
+Xavier | 26
+William | 58
+Vinicius | 29
+Ursula | 48
+Thiago | 33
+Sofia | 24
+Ricardo | 36
+Queila | 20
+Paulo | 41
+Olívia | 55
+Nicolas | 39
+Mariana | 27
+Lucas | 52
+Karen | 45
+João | 18
+Isabela | 31
+Henrique | 60
+Gabriela | 22
+Felipe | 37
+Eduarda | 28
+Diego | 42
+Carla | 19
+Bruno | 34
+Alice | 25
 
-nome: primeiro||idade:1
+todos os usuários foram passados
 
+Bruno | 59
+Bruno | 47
+Bruno | 21
+Bruno | 34
+todos os usuários foram passados
+
+Alice | 30
+Zeca | 32
+Thiago | 33
+Ricardo | 36
+Nicolas | 39
+Isabela | 31
+Felipe | 37
+Bruno | 34

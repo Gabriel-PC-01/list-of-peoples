@@ -1,6 +1,4 @@
 #include "list.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 
 int main(void){
@@ -26,6 +24,8 @@ int main(void){
     testrm();
     testps();
     #endif
+
+   rm_user("delete_all", 0); 
 
     return 0;
 }

@@ -82,5 +82,4 @@ void testrm(void){
         break;
     }
 
-    sleep(1);   
 }
